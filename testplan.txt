@@ -1,0 +1,12 @@
+1) For testcase E: 
+We malloc-ed in an incrementing size in a limited space, in this case 4096. 
+It has to reach a capacity at some point where the numbers added are too big to continue. 
+Following the summation rule, there will be a point where the sum of all numbers continuing will add up to 4096. 
+Then everything is freed in a reverse order from the last index where it was malloced. 
+
+2) For testcase F: 
+We malloc-ed 50 bytes chunks 50 times then free the rest of them. 
+We then requested the maximum possible block size. 
+The reason behind this was to test the coalecent of our free method. 
+We assigned a request pointer to a malloc of 4080 bytes, because we are working with 16 bytes. 
+After it irriates our 50 chunks, 50 times it frees our requested pointer
